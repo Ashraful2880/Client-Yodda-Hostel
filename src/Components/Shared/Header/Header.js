@@ -24,7 +24,7 @@ const toggleFunction=()=>{
                     <button 
                         onClick={toggleFunction}
                         type="button" 
-                        className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:bg-orange-700 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:bg-orange-600 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                         <i className="fas fa-bars text-2xl px-2"></i>
                     </button>
                 </div>
@@ -37,19 +37,19 @@ const toggleFunction=()=>{
                 <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                         <Link 
-                            className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium" 
+                            className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
                             to="/">Home
                         </Link>
                         <Link 
-                            className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium" 
+                            className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
                             to="/students">Students
                         </Link>
                         <Link 
-                            className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium" 
+                            className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
                             to="/about">About
                         </Link>
                         <Link
-                            className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium"
+                            className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium"
                             to="/contact">Contact
                         </Link>
                     </div>
@@ -58,7 +58,7 @@ const toggleFunction=()=>{
                 {user?.email?
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 userProfile">
                     <Link 
-                        className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium" 
+                        className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
                         to="/dashboard">Dashboard
                     </Link>
                     <div className="relative mt-2">
@@ -67,11 +67,11 @@ const toggleFunction=()=>{
                             src={user?.photoURL}
                             alt="Profile"/>
                     </div>  
-                    <Link to="/home" onClick={handleSignOut} className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium ml-8">Log Out
+                    <Link to="/home" onClick={handleSignOut} className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium ml-8">Log Out
                     </Link>           
                 </div>:
                 <Link to="/login">
-                    <i className="fas fa-sign-in-alt text-white ml-4 text-lg px-2 py-2 rounded-md hover:bg-orange-500"></i>
+                    <i className="fas fa-sign-in-alt text-white ml-4 text-lg px-2 py-2 rounded-md hover:bg-orange-600"></i>
                 </Link> }
             </div>
         </div>
@@ -79,23 +79,23 @@ const toggleFunction=()=>{
             <div className="px-2 pt-2 pb-3 space-y-1">
                 <Link 
                     to="/"
-                    className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 block px-3 py-2 rounded-md text-base font-medium">Home
+                    className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium">Home
                 </Link>
                 <Link 
                     to="/about"
-                    className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 block px-3 py-2 rounded-md text-base font-medium">About
+                    className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium">About
                 </Link>
                 <Link 
                     to="/students"
-                    className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 block px-3 py-2 rounded-md text-base font-medium">Students
+                    className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium">Students
                 </Link>
                 <Link 
                     to="/contact"
-                    className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 block px-3 py-2 rounded-md text-base font-medium">Contact
+                    className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium">Contact
                 </Link>
                 <Link 
                     to="/dashboard"
-                    className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 block px-3 py-2 rounded-md text-base font-medium">Dashboard
+                    className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium">Dashboard
                 </Link>
             </div>
         </div>

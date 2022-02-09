@@ -43,21 +43,21 @@ const Dashboard = () => {
                                 <img className="w-12 h-12 mb-4 rounded-full mx-auto" src={user?.photoURL} alt="User" />
                                 :""}
                             <Link to="/dashboard"> 
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Dashboard 
+                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Dashboard 
                                 </div>
                             </Link>
                             {admin&&
                             <>
                                 <Link to="addFoods">
-                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Add Foods
+                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Add Foods
                                     </div>
                                 </Link>
                                 <Link to="addStudent">
-                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Add Students
+                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Add Students
                                     </div>
                                 </Link>
                                 <Link to="distributeFoods">
-                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Distribute Foods
+                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Distribute Foods
                                     </div>
                                 </Link>
                             </>
