@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from '../../Images/Main-Logo.png'
 
 const Header = () => {
 
@@ -27,7 +28,7 @@ const toggleFunction=()=>{
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                     <Link to="/home">
-                        <img className="hidden lg:block h-10 w-auto" src="https://i.ibb.co/HzzW0Xv/logo.png" alt="Workflow"/>
+                        <img className="hidden lg:block h-10 w-auto" src={logo} alt="Workflow"/>
                     </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
