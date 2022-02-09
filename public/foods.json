@@ -1,0 +1,52 @@
+[
+    {
+      "image": "https://i.ibb.co/X7Tnhx1/fish.png",
+      "food": "Plane Rice With Fish",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/SyF9BJ4/food-2.png",
+      "food": "Rice with Potato Smash",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/5kKySqG/food-3.png",
+      "food": "Rice With Vegitable",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/5kKySqG/food-3.png",
+      "food": "Bread With Banana",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/9pZRdtm/soup.png",
+      "food": "Plane Rice With Soup",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/FKr9W5N/biriani.png",
+      "food": "Biriani",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/b6PGPHv/beef.png",
+      "food": "Plane Rice With Beef",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/9pZRdtm/soup.png",
+      "food": "Plane Rice With Soup",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/FKr9W5N/biriani.png",
+      "food": "Biriani",
+      "cost":"$20"
+    },
+    {
+      "image": "https://i.ibb.co/b6PGPHv/beef.png",
+      "food": "Plane Rice With Beef",
+      "cost":"$20"
+    }
+  ]
