@@ -9,7 +9,7 @@ import './dashboard.css';
 
 const Dashboard = () => {
    
-    const {user,handleSignOut}=useAuth();
+    const {user}=useAuth();
     const[admin,setAdmin]=useState(false);
 //<----------------- Load Admin Data From Database --------------->
     useEffect(()=>{
