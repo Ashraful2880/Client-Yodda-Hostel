@@ -6,6 +6,7 @@ import AddStudents from '../AddStudents/AddStudents';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import Distribute from '../Distribute/Distribute';
 import ManageFoods from '../ManageFoods/ManageFoods';
+import ManageStudents from '../ManageStudents/ManageStudents';
 import './dashboard.css';
 
 const Dashboard = () => {
@@ -61,6 +62,10 @@ const Dashboard = () => {
                                     <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Manage Foods
                                     </div>
                                 </Link>
+                                <Link to="manageStudents">
+                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Manage Students
+                                    </div>
+                                </Link>
                                 <Link to="distributeFoods">
                                     <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Distribute Foods
                                     </div>
@@ -76,6 +81,7 @@ const Dashboard = () => {
                         <Route path="addFoods" element={<AddFoods />}/>
                         <Route path="addStudent" element={<AddStudents />}/>
                         <Route path="manageFoods" element={<ManageFoods />}/>
+                        <Route path="manageStudents" element={<ManageStudents />}/>
                         <Route path="distributeFoods" element={<Distribute />}/>
                     </Routes>
                 </section>  

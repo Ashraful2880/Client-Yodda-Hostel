@@ -4,7 +4,7 @@ import './AddFoods.css';
 
 const AddFoods = () => {
     return (
-        <div className="bg-gray-400 h-screen">
+        <div className="bg h-screen">
             <div className="container mx-auto">
                 <div className="flex justify-center px-6 mb-12 pt-20">
                     <div className="w-full xl:w-3/4 lg:w-11/12 flex">
