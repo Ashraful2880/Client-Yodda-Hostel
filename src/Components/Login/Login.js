@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../Components/Images/Favicon.png';
 import logo2 from '../../Components/Images/Main-Logo.png';
+import useAuth from '../../Hooks/UseAuth';
 
 const Signin = () => {
+    const {handleSignIn,handleEmail,handlePassword,user,error,setError} =useAuth();
 
     return (
         <div className="bg-gray-400">
@@ -15,8 +17,8 @@ const Signin = () => {
                     <p className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800 mb-4">Welcome back !!!</p>
                     <p className="focus:outline-none text-xl font-extrabold leading-6 text-gray-700 mb-6">Login To Your Account</p>
                     <img className="w-32 rounded-3xl mx-auto mb-6" src={logo} alt="logo"/> 
-                    <form onSubmit="handleSignIn">
-                        {/* {user.email?setError(''): <span className="text-red-600">{error}</span> } */}
+                    <form onSubmit={handleSignIn}>
+                        {user.email?setError(''): <span className="text-red-600">{error}</span> }
                         <div>
                             <label 
                                 htmlFor="email" 
@@ -27,7 +29,7 @@ const Signin = () => {
                                 type="email" 
                                 className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-500 text-gray-800 py-3 w-full pl-3 mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" 
                                 placeholder="example@gmail.com "
-                                onBlur="{handleEmail}" />
+                                onBlur={handleEmail} />
                         </div>
                         <div className="mt-6 w-full">
                             <label htmlFor="myInput" className="text-sm font-medium leading-none text-gray-800"> Password </label>
@@ -36,7 +38,7 @@ const Signin = () => {
                                     type="password" 
                                     className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400" 
                                     placeholder="Your Password"
-                                    onBlur="{handlePassword}"
+                                    onBlur={handlePassword}
                                 />
                             </div>
                         </div>

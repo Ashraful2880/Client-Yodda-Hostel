@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../../Components/Images/Favicon.png';
 import logo2 from '../../Components/Images/Main-Logo.png';
+import useAuth from "../../Hooks/UseAuth";
 
 const Register = () => {
+  const {googleSignIn,handleEmail,handleName,handlePassword,handleRegister,user,error,setError} =useAuth();
+
   return (
     <div className="bg-gray-400">
             <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
@@ -14,8 +17,20 @@ const Register = () => {
                     <p className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800 mb-4">Please Register in</p>
                     <p className="focus:outline-none text-xl font-extrabold leading-6 text-gray-700 mb-6">Yodda Hostel</p>
                     <img className="w-32 rounded-3xl mx-auto mb-6" src={logo} alt="logo"/> 
-                    <form onSubmit="handleRegister">
-                        {/* {user.email?setError(''): <span className="text-red-600">{error}</span> } */}
+                    <form onSubmit={handleRegister}>
+                        {user.email?setError(''): <span className="text-red-600">{error}</span> }
+                        <div>
+                            <label 
+                                htmlFor="name" 
+                                className="text-sm font-medium leading-none text-gray-800"> 
+                                    Name 
+                            </label>
+                            <input 
+                                type="name" 
+                                className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-500 text-gray-800 py-3 w-full pl-3 mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" 
+                                placeholder="Your Name "
+                                onBlur={handleName} />
+                        </div>
                         <div>
                             <label 
                                 htmlFor="email" 
@@ -26,7 +41,7 @@ const Register = () => {
                                 type="email" 
                                 className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-500 text-gray-800 py-3 w-full pl-3 mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" 
                                 placeholder="example@gmail.com "
-                                onBlur="{handleEmail}" />
+                                onBlur={handleEmail} />
                         </div>
                         <div className="mt-6 w-full">
                             <label htmlFor="myInput" className="text-sm font-medium leading-none text-gray-800"> Password </label>
@@ -35,7 +50,7 @@ const Register = () => {
                                     type="password" 
                                     className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400" 
                                     placeholder="Your Password"
-                                    onBlur="{handlePassword}"
+                                    onBlur={handlePassword}
                                 />
                             </div>
                         </div>
@@ -60,7 +75,7 @@ const Register = () => {
                         <hr className="w-full bg-gray-400" />
                     </div>
                     <button 
-                      onClick="{googleSignIn}" 
+                      onClick={googleSignIn} 
                       className="focus:outline-none focus:ring-2 focus:ring-indigo-700 p-3 border rounded-lg border-gray-400 flex items-center w-full mt-6 hover:bg-gray-100">
                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in_2-svg2.svg" alt="google"/>
                         <p className="text-base font-medium ml-4 text-gray-700">

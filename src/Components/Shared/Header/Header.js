@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../../Hooks/UseAuth";
 import logo from '../../Images/Main-Logo.png'
 
+
 const Header = () => {
+    const {user,handleSignOut} =useAuth();
 
 const toggleFunction=()=>{
   const toggleButton=document.getElementById("toogleDiv");
@@ -49,25 +52,27 @@ const toggleFunction=()=>{
                             className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium"
                             to="/contact">Contact
                         </Link>
-                        <Link 
-                            className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium" 
-                            to="/dashboard">Dashboard
-                        </Link>
                     </div>
                 </div>
                 </div>
-                
+                {user?.email?
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 userProfile">
+                    <Link 
+                        className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium" 
+                        to="/dashboard">Dashboard
+                    </Link>
                     <div className="relative mt-2">
                         <img 
                             className="h-8 w-8 rounded-full ring-2 ring-offset-2 ml-2 mb-2" 
-                            src="https://avatars.githubusercontent.com/u/86690202?v=4" 
+                            src={user?.photoURL}
                             alt="Profile"/>
-                    </div>           
-                </div>
+                    </div>  
+                    <Link to="/home" onClick={handleSignOut} className="text-gray-100 hover:bg-orange-500 focus:bg-orange-700 px-3 py-2 rounded-md text-md font-medium ml-8">Log Out
+                    </Link>           
+                </div>:
                 <Link to="/login">
                     <i className="fas fa-sign-in-alt text-white ml-4 text-lg px-2 py-2 rounded-md hover:bg-orange-500"></i>
-                </Link> 
+                </Link> }
             </div>
         </div>
         <div className="hidden" id="toogleDiv">

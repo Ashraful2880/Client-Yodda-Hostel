@@ -10,10 +10,13 @@ import Register from './Components/Register/Register';
 import Footer from './Components/Shared/Footer/Footer';
 import Header from './Components/Shared/Header/Header';
 import Students from './Components/Students/Students';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
+
       <BrowserRouter>
           <Header />
             <Routes>
@@ -29,6 +32,7 @@ function App() {
             </Routes>
           <Footer />
         </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
