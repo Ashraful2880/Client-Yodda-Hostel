@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddStudents = () => {
-    
+    const [studentName,setStudentName]=useState("")
+    const [hallName,setHallName]=useState("")
+    const [clases,setClases]=useState("")
+    const [status,setStatus]=useState("")
+    const [age,setAge]=useState("")
+    const [roll,setRoll]=useState("")
+
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        const formData=new FormData();
+        formData.append("name",studentName);
+        formData.append("hall_name",hallName);
+        formData.append("class",clases);
+        formData.append("status",status);
+        formData.append("age",age);
+        formData.append("roll",roll);
+    }
+
+
     return (
-        <form className="h-full" onSubmit="{handleSubmit}" >
+        <form className="h-full" onSubmit={handleSubmit} >
             <div className="bg-white dark:bg-gray-800">
                 <div className="container mx-auto bg-white dark:bg-gray-800 rounded">
                     <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800">
@@ -24,37 +42,79 @@ const AddStudents = () => {
                                 <label htmlFor="StudentName" className="pb-2 text-sm font-bold text-gray-800">
                                     Student Name
                                 </label>
-                                <input type="text" name="name" required className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" placeholder ="Enter Student name" />
+                                <input
+                                    onChange={e=>setStudentName(e.target.value)} 
+                                    type="text" 
+                                    name="name" 
+                                    className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" 
+                                    placeholder ="Enter Student name" 
+                                    required 
+                                />
                             </div>
                             <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                                 <label htmlFor="HallName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                     Hall Name
                                 </label>
-                                <input type="text" name="hall_name" required className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" placeholder ="Enter Hall name"/>
+                                <input 
+                                    onChange={e=>setHallName(e.target.value)}
+                                    type="text" 
+                                    name="hall_name" 
+                                    className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" 
+                                    placeholder ="Enter Hall name"
+                                    required 
+                                />
                             </div>
                             <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                                 <label htmlFor="class" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                     Class
                                 </label>
-                                <input type="text" name="class" required className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" placeholder="Please Type With Text Nine / Ten" />
+                                <input
+                                    onChange={e=>setClases(e.target.value)} 
+                                    type="text" 
+                                    name="class" 
+                                    className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" 
+                                    placeholder="Please Type With Text Nine / Ten" 
+                                    required 
+                                />
                             </div>
                             <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                                 <label htmlFor="status" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                     Status
                                 </label>
-                                <input type="text" name="status" required className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" placeholder="Enter Status Active/InActive" />
+                                <input
+                                    onChange={e=>setStatus(e.target.value)} 
+                                    type="text" 
+                                    name="status" 
+                                    className="border border-gray-300 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" 
+                                    placeholder="Enter Status Active/InActive" 
+                                    required 
+                                />
                             </div>
                             <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                                 <label htmlFor="age" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                     Student Age
                                 </label>
-                                <input type="number" name="age" required className="border border-gray-300 pl-3 py-3 shadow-sm rounded bg-transparent text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" placeholder ="Enter Student Age" />
+                                <input
+                                    onChange={e=>setAge(e.target.value)} 
+                                    type="number" 
+                                    name="age" 
+                                    className="border border-gray-300 pl-3 py-3 shadow-sm rounded bg-transparent text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" 
+                                    placeholder ="Enter Student Age" 
+                                    required 
+                                />
                             </div>
                             <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                                 <label htmlFor="roll" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                     Student Roll
                                 </label>
-                                <input type="number" name="roll" required className="border border-gray-300 pl-3 py-3 shadow-sm rounded bg-transparent text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" placeholder ="Student Roll Number ( Starts From 801)" />
+                                <input
+                                    onChange={e=>setRoll(e.target.value)} 
+                                    type="number" 
+                                    name="roll" 
+                                    className="border border-gray-300 pl-3 py-3 shadow-sm rounded bg-transparent text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500" 
+                                    placeholder ="Student Roll Number ( Starts From 801)" 
+                                    required 
+                                />
                             </div>
                         </div>
                     </div>
