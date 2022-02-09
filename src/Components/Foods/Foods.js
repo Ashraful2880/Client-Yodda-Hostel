@@ -23,7 +23,7 @@ const Foods = () => {
                                     <div className="p-4">
                                         <div className="flex items-center justify-between py-4">
                                             <h2 className="text-lg font-semibold text-left">{food?.food}</h2>
-                                            <h3 className="text-red-500 text-xl font-semibold">$350</h3>
+                                            <h3 className="text-red-500 text-xl font-semibold">{food?.cost}</h3>
                                         </div>
                                         <p className="text-xs text-gray-600 mt-2 text-left">The food system has significant impacts on a wide range of other social and political issues including</p>
                                     </div>

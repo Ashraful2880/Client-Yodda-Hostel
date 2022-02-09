@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {Route,Link, Routes} from "react-router-dom";
 import useAuth from '../../../Hooks/UseAuth';
-import AddFods from '../Add Foods/AddFods';
+import AddFoods from '../Add Foods/AddFoods';
 import AddStudents from '../AddStudents/AddStudents';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import Distribute from '../Distribute/Distribute';
@@ -73,7 +73,7 @@ const Dashboard = () => {
                 <section className="w-full">
                     <Routes>
                         <Route path="/" element={<DashboardHome />}/>
-                        <Route path="addFoods" element={<AddFods />}/>
+                        <Route path="addFoods" element={<AddFoods />}/>
                         <Route path="addStudent" element={<AddStudents />}/>
                         <Route path="manageFoods" element={<ManageFoods />}/>
                         <Route path="distributeFoods" element={<Distribute />}/>
