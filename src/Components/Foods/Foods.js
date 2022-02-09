@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useFoods from '../../Hooks/UseFoods';
 
 const Foods = () => {
-    const [foods,setFoods]=useState([])
-    useEffect(()=>{
-        fetch('./foods.json')
-        .then(res=>res.json())
-        .then(data=>setFoods(data))
-    },[])
+    const [foods]=useFoods();
     return (
         <>
              <div className="bg-gray-100 ">

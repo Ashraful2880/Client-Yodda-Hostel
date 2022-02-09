@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useStudents from '../../Hooks/UseStudents';
 
 const Students = () => {
-  const [students,setStudents]=useState([])
-    useEffect(()=>{
-        fetch('./students.json')
-        .then(res=>res.json())
-        .then(data=>setStudents(data))
-    },[])
+  const [students]=useStudents();
+    
     return (
         <div className="container mx-auto flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
