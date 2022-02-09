@@ -54,6 +54,29 @@ const Register = () => {
                             Login here
                         </Link>
                     </p>
+                    <div className="w-full flex items-center justify-between pt-5">
+                        <hr className="w-full bg-gray-400" />
+                        <p className="text-base font-medium leading-4 px-2.5 text-gray-500">OR</p>
+                        <hr className="w-full bg-gray-400" />
+                    </div>
+                    <button 
+                      onClick="{googleSignIn}" 
+                      className="focus:outline-none focus:ring-2 focus:ring-indigo-700 p-3 border rounded-lg border-gray-400 flex items-center w-full mt-6 hover:bg-gray-100">
+                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in_2-svg2.svg" alt="google"/>
+                        <p className="text-base font-medium ml-4 text-gray-700">
+                            Continue with Google
+                        </p>
+                    </button>
+                    <button 
+                      className="focus:outline-none focus:ring-2 focus:ring-indigo-700 p-3 border rounded-lg border-gray-400 flex items-center w-full mt-4 hover:bg-gray-100">
+                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in_2-svg3.svg" alt="github"/>
+                        <p className="text-base font-medium ml-4 text-gray-700">Continue with Github</p>
+                    </button>
+                    <button 
+                      className="focus:outline-none focus:ring-2 focus:ring-indigo-700 p-3 border rounded-lg border-gray-400 flex items-center w-full mt-4 hover:bg-gray-100">
+                      <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in_2-svg4.svg" alt="twitter"/>
+                        <p className="text-base font-medium ml-4 text-gray-700">Continue with Twitter</p>
+                    </button>
                 </div>
                 <div className="xl:w-1/3 md:w-1/2 lg:ml-16 ml-8 md:mt-0 mt-6">
                     <div className="pl-8 md:block hidden">
