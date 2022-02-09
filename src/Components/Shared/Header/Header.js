@@ -46,6 +46,10 @@ const toggleFunction=()=>{
                         </Link>
                         <Link 
                             className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
+                            to="/foods">Food Items
+                        </Link>
+                        <Link 
+                            className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
                             to="/about">About
                         </Link>
                         <Link
