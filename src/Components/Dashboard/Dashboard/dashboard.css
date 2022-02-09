@@ -1,0 +1,5 @@
+@media screen and (min-width:630px){
+    .mobileBtn{
+        display: none;
+    }
+}
