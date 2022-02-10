@@ -5,6 +5,7 @@ const MakeAdmin = () => {
     const handleAdminEmail=event=>{
         setAdminEmail(event.target.value)
     }
+    
     const handleMakeAdmin=event=>{
         event.preventDefault();
         const admin={email:adminEmail}
