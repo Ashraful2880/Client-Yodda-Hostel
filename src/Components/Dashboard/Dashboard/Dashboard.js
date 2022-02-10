@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {Route,Link, Routes} from "react-router-dom";
 import useAuth from '../../../Hooks/UseAuth';
 import AddFoods from '../Add Foods/AddFoods';
@@ -37,33 +37,40 @@ const Dashboard = () => {
                             {user?.email?
                                 <img className="w-12 h-12 mb-4 rounded-full mx-auto" src={user?.photoURL} alt="User" />
                                 :""}
-                            <Link to="/dashboard"> 
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Dashboard 
-                                </div>
+                            <Link 
+                                to="/dashboard" 
+                                className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600 focus:bg-orange-600 w-full block"> 
+                                Dashboard 
                             </Link>
-                            <Link to="addFoods">
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Add Foods
-                                </div>
+                            <Link 
+                                to="addFoods" 
+                                className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600 focus:bg-orange-600 w-full block">
+                                Add Foods
                             </Link>
-                            <Link to="manageFoods">
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Manage Foods
-                                </div>
+                            <Link 
+                                to="manageFoods" 
+                                className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600 focus:bg-orange-600 w-full block">
+                                Manage Foods
                             </Link>
-                            <Link to="addStudent">
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Add Students
-                                </div>
+                            <Link
+                                to="addStudent" 
+                                className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600 focus:bg-orange-600 w-full block">
+                                Add Students
                             </Link>
-                            <Link to="manageStudents">
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Manage Students
-                                </div>
+                            <Link 
+                                to="manageStudents"
+                                className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600 focus:bg-orange-600 w-full block">
+                               Manage Students
                             </Link>
-                            <Link to="distributeFoods">
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Distribute Foods
-                                </div>
+                            <Link 
+                                to="distributeFoods"
+                                className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600 focus:bg-orange-600 w-full block">
+                                Distribute Foods
                             </Link>
-                            <Link to="makeAdmin">
-                                <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Make Admin
-                                </div>
+                            <Link 
+                                to="makeAdmin"
+                                className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600 focus:bg-orange-600 w-full block">
+                                Make Admin
                             </Link>
                         </div>
                     </div>
