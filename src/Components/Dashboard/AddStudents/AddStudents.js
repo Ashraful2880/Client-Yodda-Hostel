@@ -17,9 +17,22 @@ const AddStudents = () => {
         formData.append("status",status);
         formData.append("age",age);
         formData.append("roll",roll);
+
+        fetch('http://localhost:5000/addStudent', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                alert("Good job!", "Blog Posted", "Go to Blog Page To see The Blog");
+            }
+        })
+        .catch(error => {
+            alert('Error:', error);
+        });
     }
-
-
+    
     return (
         <form className="h-full bg" onSubmit={handleSubmit} >
             <div className="">
