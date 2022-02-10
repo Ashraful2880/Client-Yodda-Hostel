@@ -46,7 +46,7 @@ const ManageStudents = () => {
                         Status
                       </th>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Check ALl
+                        Check ALl <input type="checkbox" className="checkbox checkbox-primary"/>
                       </th>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Actions
@@ -99,15 +99,29 @@ const ManageStudents = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                              <div className="text-sm font-medium text-gray-900">
-                                <select id="stDetails" name="carlist" form="carform">
-                                    <option value="select">Select Actions</option>
-                                    <option value="delete">Delete</option>
-                                    <option value="edit">Edit</option>
-                                    <option value="status">Change Status</option>
-                                </select>
+                              <div className="dropdown inline-block relative">
+                                <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-flex items-center z-10">
+                                  <span className="mr-1">Actions</span>
+                                </button>
+                                <ul className="dropdown-menu absolute hidden text-gray-700 pt-1 z-50">
+                                  <li>
+                                    <button 
+                                      className="w-full rounded-t bg-blue-500 hover:bg-blue-600 text-white py-1 px-4 block whitespace-no-wrap">Change Status
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button 
+                                      className="w-full bg-blue-500 hover:bg-blue-600 text-white py-1 px-4 block whitespace-no-wrap">Delete
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button 
+                                      className="rounded-b w-full bg-blue-500 hover:bg-blue-600 text-white py-1 px-4 block whitespace-no-wrap">Edit
+                                    </button>
+                                  </li>
+                                </ul>
                               </div>
-                          </div>
+                            </div>
                         </td>
                       </tr>
                     ))}
