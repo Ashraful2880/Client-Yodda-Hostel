@@ -10,27 +10,19 @@ const AddStudents = () => {
 
     const handleSubmit=(event)=>{
         event.preventDefault();
-        const formData=new FormData();
-        formData.append("name",studentName);
-        formData.append("hall_name",hallName);
-        formData.append("class",clases);
-        formData.append("status",status);
-        formData.append("age",age);
-        formData.append("roll",roll);
-
-        fetch('http://localhost:5000/addStudent', {
-            method: 'POST',
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.insertedId){
-                alert("Good job!", "Blog Posted", "Go to Blog Page To see The Blog");
-            }
-        })
-        .catch(error => {
-            alert('Error:', error);
-        });
+       const studentDetails={roll,age,status,"class":clases,"hall_name":hallName,"name":studentName}
+       
+       fetch('http://localhost:5000/addStudent',{
+        method:"POST",
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify(studentDetails)
+    })
+    .then(res=>res.json())
+    .then(result=>{
+        if(result.acknowledged){
+            window.alert("New Student Added");
+        };
+    });
     }
     
     return (

@@ -54,12 +54,12 @@ const Dashboard = () => {
                                     <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Add Foods
                                     </div>
                                 </Link>
-                                <Link to="addStudent">
-                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Add Students
-                                    </div>
-                                </Link>
                                 <Link to="manageFoods">
                                     <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Manage Foods
+                                    </div>
+                                </Link>
+                                <Link to="addStudent">
+                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Add Students
                                     </div>
                                 </Link>
                                 <Link to="manageStudents">
