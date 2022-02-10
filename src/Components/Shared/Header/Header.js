@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/UseAuth";
 import logo from '../../Images/Main-Logo.png'
@@ -6,15 +6,22 @@ import logo from '../../Images/Main-Logo.png'
 
 const Header = () => {
     const {user,handleSignOut} =useAuth();
-
-const toggleFunction=()=>{
-  const toggleButton=document.getElementById("toogleDiv");
-    if (toggleButton.style.display === "none") {
-     toggleButton.style.display = "block";
-   } else {
-     toggleButton.style.display = "none";
-   }
-}
+    const[admin,setAdmin]=useState(false);
+    //<----------------- Load Admin Data From Database --------------->
+        useEffect(()=>{
+            fetch(`http://localhost:5000/user/${user?.email}`)
+            .then(res=>res.json())
+            .then(data=>setAdmin(data.admin))
+        },[user.email]);
+    
+    const toggleFunction=()=>{
+     const toggleButton=document.getElementById("toogleDiv");
+        if (toggleButton.style.display === "none") {
+        toggleButton.style.display = "block";
+        } else {
+        toggleButton.style.display = "none";
+    }
+    }
 
   return (
     <nav className="bg-gray-900 sticky top-0 z-50">
@@ -59,12 +66,14 @@ const toggleFunction=()=>{
                     </div>
                 </div>
                 </div>
+                {admin&&
+                <Link 
+                    className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
+                    to="/dashboard">Dashboard
+                </Link>
+                }
                 {user?.email?
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 userProfile">
-                    <Link 
-                        className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
-                        to="/dashboard">Dashboard
-                    </Link>
                     <div className="relative mt-2">
                         <img 
                             className="h-8 w-8 rounded-full ring-2 ring-offset-2 ml-2 mb-2" 
