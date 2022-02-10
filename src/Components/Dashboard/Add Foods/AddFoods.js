@@ -18,7 +18,7 @@ const AddFoods = () => {
         formData.append("cost",foodPrice);
         formData.append("image",foodImage);
 
-        fetch('http://localhost:5000/addFoods', {
+        fetch('https://yodda-hostel.herokuapp.com/addFoods', {
             method: 'POST',
             body: formData
         })

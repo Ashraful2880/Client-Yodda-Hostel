@@ -12,7 +12,7 @@ const AddStudents = () => {
         event.preventDefault();
        const studentDetails={roll,age,status,"class":clases,"hall_name":hallName,"name":studentName}
        
-       fetch('http://localhost:5000/addStudent',{
+       fetch('https://yodda-hostel.herokuapp.com/addStudent',{
         method:"POST",
         headers:{'content-type':'application/json'},
         body:JSON.stringify(studentDetails)

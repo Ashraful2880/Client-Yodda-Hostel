@@ -127,7 +127,7 @@ const useFirebase=()=>{
 
   const saveUser=()=>{
     const dbUser={displayName:name,email:email}
-    fetch('http://localhost:5000/users',{
+    fetch('https://yodda-hostel.herokuapp.com/users',{
       method:"POST",
       headers:{'content-type':'application/json'},
       body:JSON.stringify(dbUser)
@@ -140,7 +140,7 @@ const useFirebase=()=>{
   //<----------- Update User Info To Database ---------->
 
   const updateUser=(googleUser)=>{
-    fetch('http://localhost:5000/users',{
+    fetch('https://yodda-hostel.herokuapp.com/users',{
       method:"PUT",
       headers:{'content-type':'application/json'},
       body:JSON.stringify(googleUser)

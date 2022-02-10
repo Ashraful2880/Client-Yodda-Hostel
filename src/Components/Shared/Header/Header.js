@@ -9,7 +9,7 @@ const Header = () => {
     const[admin,setAdmin]=useState(false);
     //<----------------- Load Admin Data From Database --------------->
         useEffect(()=>{
-            fetch(`http://localhost:5000/user/${user?.email}`)
+            fetch(`https://yodda-hostel.herokuapp.com/user/${user?.email}`)
             .then(res=>res.json())
             .then(data=>setAdmin(data.admin))
         },[user.email]);
