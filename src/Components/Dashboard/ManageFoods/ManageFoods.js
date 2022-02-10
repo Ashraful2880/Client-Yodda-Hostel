@@ -10,7 +10,7 @@ const ManageFoods = () => {
       const handleDelete=(id)=>{
         const proceed=window.confirm("Are You Sure ? Want to Delete?");
         if (proceed){
-            const url=`https://serene-coast-79100.herokuapp.com/deleteOrder/${id}`;
+            const url=`http://localhost:5000/deleteFood/${id}`;
             fetch(url,{
                 method:'DELETE'
             })
