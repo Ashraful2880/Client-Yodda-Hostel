@@ -3,7 +3,7 @@ import useStudents from '../../../Hooks/UseStudents';
 
 const ManageStudents = () => {
     const [students]=useStudents();
-     //<-------------- Food Delete Function ------------>
+
     return (
         <div className="container mx-auto flex flex-col">
           <div className="w-full my-5">

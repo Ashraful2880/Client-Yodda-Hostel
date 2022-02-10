@@ -8,7 +8,7 @@ const Register = () => {
   const {googleSignIn,handleEmail,handleName,handlePassword,handleRegister,user,error,setError} =useAuth();
 
   return (
-    <div className="bg-gray-400">
+    <div className="bg">
             <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
                 <div className=" md:hidden sm:mb-8 mb-6">
                    <img src={logo} alt="logo"/>
@@ -101,15 +101,15 @@ const Register = () => {
                         <div>
                            <i className="fas fa-quote-left"></i>
                         </div>
-                        <p className="sm:text-2xl text-xl leading-7 text-gray-600 pl-2.5 text-left ml-4">Generating random paragraphs can be an excellent way for writers to get their creative flow going at the beginning of the day. The writer has no idea what topic the random paragraph will be about when it appears</p>
+                        <p className="sm:text-2xl text-xl leading-7 text-white pl-2.5 text-left ml-4">Generating random paragraphs can be an excellent way for writers to get their creative flow going at the beginning of the day. The writer has no idea what topic the random paragraph will be about when it appears</p>
                     </div>
                     <div className="flex items-center pl-8 mt-10">
                         <div className="w-8 h-8">
                             <img src="https://avatars.githubusercontent.com/u/86690202?v=4" alt="profile" className="w-full h-full rounded-2xl" />
                         </div>
                         <div className="ml-2">
-                            <p className="text-sm font-medium leading-none text-gray-800">Ashraful Islam</p>
-                            <p className="text-sm font-medium leading-none text-gray-600 mt-1 cursor-pointer hover:underline">See profile</p>
+                            <p className="text-sm font-medium leading-none text-white">Ashraful Islam</p>
+                            <p className="text-sm font-medium leading-none text-white mt-1 cursor-pointer hover:underline">See profile</p>
                         </div>
                     </div>
                 </div>

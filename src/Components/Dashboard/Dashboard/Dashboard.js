@@ -5,6 +5,7 @@ import AddFoods from '../Add Foods/AddFoods';
 import AddStudents from '../AddStudents/AddStudents';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import Distribute from '../Distribute/Distribute';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageFoods from '../ManageFoods/ManageFoods';
 import ManageStudents from '../ManageStudents/ManageStudents';
 import './dashboard.css';
@@ -70,6 +71,10 @@ const Dashboard = () => {
                                     <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Distribute Foods
                                     </div>
                                 </Link>
+                                <Link to="makeAdmin">
+                                    <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-orange-600">Make Admin
+                                    </div>
+                                </Link>
                             </>
                             }
                         </div>
@@ -83,6 +88,7 @@ const Dashboard = () => {
                         <Route path="manageFoods" element={<ManageFoods />}/>
                         <Route path="manageStudents" element={<ManageStudents />}/>
                         <Route path="distributeFoods" element={<Distribute />}/>
+                        <Route path="makeAdmin" element={<MakeAdmin />}/>
                     </Routes>
                 </section>  
             </main>

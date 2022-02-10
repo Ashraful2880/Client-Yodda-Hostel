@@ -1,4 +1,4 @@
-import { getAuth,updateProfile,signOut ,GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signInWithPopup,GithubAuthProvider, sendEmailVerification } from "firebase/auth";
+import { getAuth,updateProfile,signOut ,GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signInWithPopup, sendEmailVerification } from "firebase/auth";
 import { useEffect, useState } from "react";
 import iniAuthentication from "../Firebase/Firebase.init";
 
@@ -30,21 +30,7 @@ const useFirebase=()=>{
         setError(error.message)
       }).finally(()=>setIsLoading(false));
     }
-    // Sign in With Github
-
-    const gitHubSignIn=()=>{
-      setIsLoading(true);
-      const gitHubProvider = new GithubAuthProvider();
-      signInWithPopup(auth, gitHubProvider)
-      .then((result) => {
-      const user = result.user;
-      setUser(user)
-      console.log(result.user);
-  }).catch((error) => {
-    setError(error.message)
-    console.error(error.message);
-  }).finally(()=>setIsLoading(false));
-    }
+   
     // Create User With Email & Password
 
     const handleName=(event)=>{
@@ -141,7 +127,7 @@ const useFirebase=()=>{
 
   const saveUser=()=>{
     const dbUser={displayName:name,email:email}
-    fetch('https://young-meadow-11819.herokuapp.com/users',{
+    fetch('http://localhost:5000/users',{
       method:"POST",
       headers:{'content-type':'application/json'},
       body:JSON.stringify(dbUser)
@@ -154,7 +140,7 @@ const useFirebase=()=>{
   //<----------- Update User Info To Database ---------->
 
   const updateUser=(googleUser)=>{
-    fetch('https://young-meadow-11819.herokuapp.com/users',{
+    fetch('http://localhost:5000/users',{
       method:"PUT",
       headers:{'content-type':'application/json'},
       body:JSON.stringify(googleUser)
@@ -164,7 +150,7 @@ const useFirebase=()=>{
   })
   }
 
-return{handleEmail,handleName,handlePassword,handleRegister,error,user,handleSignIn,handleSignOut,googleSignIn,gitHubSignIn,setError,isloading}
+return{handleEmail,handleName,handlePassword,handleRegister,error,user,handleSignIn,handleSignOut,googleSignIn,setError,isloading}
 }
 
 export default useFirebase;
