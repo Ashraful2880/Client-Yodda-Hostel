@@ -1,4 +1,4 @@
-# yodda Hostel
+# Yodda Hostel
 ### Admin Email: test@admin.com
 ### Admin Password: #2022Dev
 
