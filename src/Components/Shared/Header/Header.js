@@ -66,12 +66,16 @@ const Header = () => {
                     </div>
                 </div>
                 </div>
-                {admin&&
-                <Link 
+                {/* {admin&& */}
+
+                {user.email?
+                    <Link 
                     className="text-gray-100 hover:bg-orange-600 focus:bg-orange-600 px-3 py-2 rounded-md text-md font-medium" 
                     to="/dashboard">Dashboard
-                </Link>
-                }
+                </Link>:""
+                }                   
+
+                {/* } */}
                 {user?.email?
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 userProfile">
                     <div className="relative mt-2">
