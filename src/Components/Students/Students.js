@@ -2,25 +2,27 @@ import React from 'react';
 import useStudents from '../../Hooks/UseStudents';
 
 const Students = () => {
-  const [students]=useStudents();
-  
-    return (
-        <div className="container mx-auto flex flex-col">
+  const [students] = useStudents();
+
+  return (
+    <div className="container mx-auto flex flex-col min-h-screen">
+      {students?.length > 0 ?
+        <>
           <div className="w-full my-5">
-              <div className="my-2 p-1 bg-white flex border border-gray-200 rounded">
-                  <div className="flex flex-auto flex-wrap"></div>
-                    <input 
-                      placeholder="Search by Roll" 
-                      className="p-1 px-2 appearance-none outline-none w-full text-gray-800"/>
-                    <div className="text-gray-300 w-8 py-1 pl-2 pr-1 border-l flex items-center border-gray-200">
-                        <button className="cursor-pointer w-6 h-6 text-gray-600 outline-none focus:outline-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-up w-4 h-4">
-                                <polyline points="18 15 12 9 6 15"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                  </div>
+            <div className="my-2 p-1 bg-white flex border border-gray-200 rounded">
+              <div className="flex flex-auto flex-wrap"></div>
+              <input
+                placeholder="Search by Roll"
+                className="p-1 px-2 appearance-none outline-none w-full text-gray-800" />
+              <div className="text-gray-300 w-8 py-1 pl-2 pr-1 border-l flex items-center border-gray-200">
+                <button className="cursor-pointer w-6 h-6 text-gray-600 outline-none focus:outline-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-up w-4 h-4">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
+                </button>
               </div>
+            </div>
+          </div>
           <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
               <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -52,36 +54,36 @@ const Students = () => {
                       <tr key={student._id}>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                              <div className="text-sm font-medium text-gray-900">{student.roll}</div>
+                            <div className="text-sm font-medium text-gray-900">{student.roll}</div>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                              <div className="text-sm font-medium text-gray-900">{student.name}</div>
+                            <div className="text-sm font-medium text-gray-900">{student.name}</div>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                              <div className="text-sm font-medium text-gray-900">{student.age}</div>
+                            <div className="text-sm font-medium text-gray-900">{student.age}</div>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                              <div className="text-sm font-medium text-gray-900">{student.class}</div>
+                            <div className="text-sm font-medium text-gray-900">{student.class}</div>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                              <div className="text-sm font-medium text-gray-900">{student.hall_name}</div>
+                            <div className="text-sm font-medium text-gray-900">{student.hall_name}</div>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                          {
-                            student.status==="Active"?
-                              <div className="text-sm font-medium text-gray-900 bg-green-200 px-2 rounded-lg">{student.status}</div>:
-                              <div className="text-sm font-medium text-gray-900 bg-red-300 px-2 rounded-lg">{student.status}</div>
-                          }
+                            {
+                              student.status === "Active" ?
+                                <div className="text-sm font-medium text-gray-900 bg-green-200 px-2 rounded-lg">{student.status}</div> :
+                                <div className="text-sm font-medium text-gray-900 bg-red-300 px-2 rounded-lg">{student.status}</div>
+                            }
                           </div>
                         </td>
                       </tr>
@@ -91,8 +93,14 @@ const Students = () => {
               </div>
             </div>
           </div>
+        </>
+        :
+        <div className="w-full h-[60vh] flex justify-center items-center">
+          <div className="w-12 h-12 rounded-full animate-spin border-4 border-solid border-green-500 border-t-transparent"></div>
         </div>
-    );
+      }
+    </div>
+  );
 };
 
 export default Students;
